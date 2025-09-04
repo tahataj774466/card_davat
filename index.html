@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>کارت متنی افقی</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: linear-gradient(135deg, #1f1c2c, #928dab);
+      font-family: 'Arial', sans-serif;
+    }
+
+    .card {
+      width: 600px; /* عرض بیشتر */
+      height: 450px;
+      perspective: 1500px;
+    }
+
+    .card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 1s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+      transform-style: preserve-3d;
+      transform: rotateY(180deg); /* ابتدا پشت کارت دیده شود */
+    }
+
+    .card:hover .card-inner {
+      transform: rotateY(0deg) rotateX(10deg);
+    }
+
+    .card-front, .card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    /* جلو کارت (متن) */
+    .card-front {
+      background-color: #ffffff;
+      color: #000;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+    }
+
+    .card-front h2 {
+      margin: 5px 0;
+      text-align: center;
+      color: #e74c3c;
+    }
+
+    .card-front p {
+      margin: 5px 0;
+      text-align: justify;
+      font-size: 1rem;
+    }
+    .card-front {
+  background-color: #ffffff;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-right: 40px; /* فاصله بیشتر از سمت راست */
+  padding-left: 20px;  /* فاصله سمت چپ کمتر */
+  box-sizing: border-box;
+  text-align: right;   /* متن‌ها راست‌چین شوند */
+}
+
+.card-front h2 {
+  margin: 5px 0;
+  color: #e74c3c;
+  text-align: right; /* تیترها هم راست‌چین شوند */
+}
+
+.card-front p {
+  margin: 5px 0;
+  text-align: right;  /* پاراگراف‌ها راست‌چین شوند */
+  font-size: 1rem;
+}
+
+
+    /* پشت کارت (عکس جاده) */
+    .card-back {
+      background-image: url("https://newsmedia.tasnimnews.com/Tasnim/Uploaded/Image/1398/01/15/1398011517513790217081674.jpg");
+      background-size: cover;
+      background-position: center;
+      transform: rotateY(180deg);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: rgb(214, 71, 71);
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-shadow: 7px 1px 5px rgba(0,0,0,0.8);
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="card-inner">
+      <div class="card-front">
+        <h2>دعوت نامه </h2>
+        <p>با عرض سلام و وقت بخیر خدمت رضاخان زردهی تبریز</p>
+
+        <h2>درخواست</h2>
+        <p>از طرف خواهر و شوهر خواهر و خواهر زاده</p>
+
+        <h2>موضوع درخواست</h2>
+        <p>جناب رضا دایی زردهی تبریز از شما درخواست میشود تا به شهریار خیابان آهنگران کوچه ی کوشش پلاک 13 زنگ 6 مراجعه فرمایید <p>
+
+        <h2>تصمیم نهایی</h2>
+        <p>امیدوارم که این پیام ذره ای در تصمیم شما تاثیر گذاشته باشد با تشکر</p>
+      </div>
+      <div class="card-back">
+
+      </div>
+    </div>
+  </div>
+</body>
+</html>
